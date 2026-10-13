@@ -1,4 +1,6 @@
-
+---
+layout: null
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -82,15 +84,31 @@ footer {
 
 <section id="articles">
   <h2>Articles & Blog</h2>
+
+  {% for post in site.posts %}
   <div class="card">
-    <h3>Amateur Radio: Analog vs. Digital Voice</h3>
+    <h3>
+      <a href="{{ post.url | relative_url }}">
+        {{ post.title }}
+      </a>
+    </h3>
+
     <p>
-      Exploring FM, DMR, D-STAR, and Fusion,
-      including repeater availability, user activity,
-      and what to consider when buying your next radio.
+      {{ post.date | date: "%B %-d, %Y" }}
+      • K4RJM
     </p>
-    <p>Article coming soon.</p>
+
+    <p>
+      {{ post.excerpt | strip_html | truncatewords: 45 }}
+    </p>
+
+    <p>
+      <a href="{{ post.url | relative_url }}">
+        Read Full Article →
+      </a>
+    </p>
   </div>
+  {% endfor %}
 </section>
 
 <section id="projects">
