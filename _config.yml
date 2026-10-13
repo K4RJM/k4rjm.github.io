@@ -1,0 +1,8 @@
+
+title: K4RJM Amateur Radio
+description: Amateur Radio, Technology, Projects and Reviews
+url: "https://k4rjm.github.io"
+baseurl: ""
+theme: minima
+plugins:
+  - jekyll-feed
